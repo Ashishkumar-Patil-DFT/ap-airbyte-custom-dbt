@@ -2,17 +2,14 @@
 
 with uob_user as (
     select * from BNKUser
-), 
-with uob_customer as (
+),  uob_customer as (
     select * from BNKCustomer
-), 
-with uob_affiliate as (
+),  uob_affiliate as (
     select * from BNKAffiliateFi
-),
-with uob_arcprincipal as (
+), uob_arcprincipal as (
     select * from ARCPrincipal
 ),
-uob_final as (
+DNUserDetails as (
     select uob_affiliate.CORORGKY as A_CORORGKY,
            uob_affiliate.AFFILIATEID as A_AFFILIATEID,
            uob_arcprincipal.ARCPRINCIPALKY as P_ARCPRINCIPALKY,
