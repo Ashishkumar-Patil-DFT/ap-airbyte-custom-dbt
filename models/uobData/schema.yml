@@ -1,0 +1,16 @@
+
+version: 2
+
+models:
+  - name: BNKUser
+    description: "User Details"
+
+  - name: BNKCustomer
+    description: "Customer Details"
+
+  - name: BNKAffiliateFI
+    description: "Affiliate Details"
+
+  - name: ARCPrincipal
+    description: "Principal Details"
+
