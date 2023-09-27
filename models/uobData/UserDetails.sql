@@ -1,5 +1,7 @@
 {{ config(materialized='table') }}
 
+set search_path='airbytescm'
+
 with uob_user as (
     select * from _airbyte_raw_bnkuser
 ),  uob_customer as (
