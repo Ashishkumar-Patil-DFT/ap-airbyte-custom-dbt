@@ -35,4 +35,4 @@ DNUserDetails as (
                                   
 )
 
-select * from uob_final
+select * from DNUserDetails

@@ -1,6 +1,26 @@
 
 version: 2
 
+sources:
+  - name: source_airbytedb
+    description: "Source Database for DBT transformation"
+    database: airbytedb
+    schema: airbytescm
+    tables:
+      - name: _airbyte_raw_bnkuser
+        description: "User Information table"
+
+      - name: _airbyte_raw_bnkcustomer
+        description: "Customer Information table"
+        
+      - name: _airbyte_raw_bnkaffiliatefi
+        description: "Affiliate Information table"
+        
+      - name: _airbyte_raw_arcprincipal
+        description: "Principal Information table"
+    
+
+
 models:
   - name: UserDetails
     description: "User Details"
