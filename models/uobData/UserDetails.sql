@@ -1,15 +1,15 @@
 {{ config(materialized='table') }}
 
-set search_path='airbytescm'
+
 
 with uob_user as (
-    select * from _airbyte_raw_bnkuser
+    select * from airbytescm._airbyte_raw_bnkuser
 ),  uob_customer as (
-    select * from _airbyte_raw_bnkcustomer
+    select * from airbytescm._airbyte_raw_bnkcustomer
 ),  uob_affiliate as (
-    select * from _airbyte_raw_bnkaffiliatefi
+    select * from airbytescm._airbyte_raw_bnkaffiliatefi
 ), uob_arcprincipal as (
-    select * from _airbyte_raw_arcprincipal
+    select * from airbytescm._airbyte_raw_arcprincipal
 ),
 DNUserDetails as (
     select uob_affiliate.CORORGKY as A_CORORGKY,
