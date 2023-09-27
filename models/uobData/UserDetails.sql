@@ -1,7 +1,5 @@
 {{ config(materialized='table') }}
 
-
-
 with uob_user as (
     select * from airbytescm._airbyte_raw_bnkuser
 ),  uob_customer as (
@@ -10,7 +8,8 @@ with uob_user as (
     select * from airbytescm._airbyte_raw_bnkaffiliatefi
 ), uob_arcprincipal as (
     select * from airbytescm._airbyte_raw_arcprincipal
-),
+)
+    /*,
 DNUserDetails as (
     select uob_affiliate.CORORGKY as A_CORORGKY,
            uob_affiliate.AFFILIATEID as A_AFFILIATEID,
@@ -31,10 +30,10 @@ DNUserDetails as (
            uob_user.ISDELETED as U_ISDELETED
            
         from uob_user
-        Left join uob_customer  on uob_customer.C_BNKCUSTOMERKY = uob_user.U_BNKCUSTOMERKY
-        Left join uob_affiliate on uob_affiliate.A_CORORGKY =  uob_customer.C_CORORGKYFI
-        Left join uob_arcprincipal on uob_user.U_ARCPRINCIPALKY = uob_arcprincipal.P_ARCPRINCIPALKY
+        Left join uob_customer  on uob_customer.BNKCUSTOMERKY = uob_user.BNKCUSTOMERKY
+        Left join uob_affiliate on uob_affiliate.CORORGKY =  uob_customer.CORORGKYFI
+        Left join uob_arcprincipal on uob_user.ARCPRINCIPALKY = uob_arcprincipal.ARCPRINCIPALKY
                                   
-)
+)*/
 
-select * from DNUserDetails
+select * from uob_user
