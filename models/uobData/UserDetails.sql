@@ -1,13 +1,13 @@
 {{ config(materialized='table') }}
 
 with uob_user as (
-    select * from BNKUser
+    select * from _airbyte_raw_bnkuser
 ),  uob_customer as (
-    select * from BNKCustomer
+    select * from _airbyte_raw_bnkcustomer
 ),  uob_affiliate as (
-    select * from BNKAffiliateFi
+    select * from _airbyte_raw_bnkaffiliatefi
 ), uob_arcprincipal as (
-    select * from ARCPrincipal
+    select * from _airbyte_raw_arcprincipal
 ),
 DNUserDetails as (
     select uob_affiliate.CORORGKY as A_CORORGKY,
