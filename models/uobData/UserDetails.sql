@@ -1,13 +1,13 @@
 {{ config(materialized='table') }}
 
 with uob_user as (
-    select * from airbytescm._airbyte_raw_bnkuser
-)/*,  uob_customer as (
-    select * from airbytescm._airbyte_raw_bnkcustomer
+    select * from airbytescm.BNKUser
+),  uob_customer as (
+    select * from airbytescm.BNKCustomer
 ),  uob_affiliate as (
-    select * from airbytescm._airbyte_raw_bnkaffiliatefi
+    select * from airbytescm.BNKAffiliateFI
 ), uob_arcprincipal as (
-    select * from airbytescm._airbyte_raw_arcprincipal
+    select * from airbytescm.ARCPrincipal
 ),
 DNUserDetails as (
     select uob_affiliate.CORORGKY as A_CORORGKY,
@@ -31,13 +31,7 @@ DNUserDetails as (
         from uob_user
         Left join uob_customer  on uob_customer.BNKCUSTOMERKY = uob_user.BNKCUSTOMERKY
         Left join uob_affiliate on uob_affiliate.CORORGKY =  uob_customer.CORORGKYFI
-        Left join uob_arcprincipal on uob_user.ARCPRINCIPALKY = uob_arcprincipal.ARCPRINCIPALKY
-                                  
-)*/
+        Left join uob_arcprincipal on uob_user.ARCPRINCIPALKY = uob_arcprincipal.ARCPRINCIPALKY                             
+    )
 
-,
-DNUserDetailsTemp as (
-    select * from uob_user
-)
-
-select * from DNUserDetailsTemp
+select * from DNUserDetails
