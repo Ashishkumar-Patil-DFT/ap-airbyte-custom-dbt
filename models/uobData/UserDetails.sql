@@ -2,14 +2,13 @@
 
 with uob_user as (
     select * from airbytescm._airbyte_raw_bnkuser
-),  uob_customer as (
+)/*,  uob_customer as (
     select * from airbytescm._airbyte_raw_bnkcustomer
 ),  uob_affiliate as (
     select * from airbytescm._airbyte_raw_bnkaffiliatefi
 ), uob_arcprincipal as (
     select * from airbytescm._airbyte_raw_arcprincipal
-)
-    /*,
+),
 DNUserDetails as (
     select uob_affiliate.CORORGKY as A_CORORGKY,
            uob_affiliate.AFFILIATEID as A_AFFILIATEID,
@@ -36,4 +35,9 @@ DNUserDetails as (
                                   
 )*/
 
-select * from uob_user
+,
+DNUserDetailsTemp as (
+    select * from uob_user
+)
+
+select * from DNUserDetailsTemp
