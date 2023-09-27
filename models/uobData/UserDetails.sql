@@ -13,7 +13,7 @@ DNUserDetails as (
     select uob_affiliate.CORORGKY as A_CORORGKY,
            uob_affiliate.AFFILIATEID as A_AFFILIATEID,
            uob_arcprincipal.ARCPRINCIPALKY as P_ARCPRINCIPALKY,
-           uob_arcprincipal.NAME as P_PRINCIPALNAME,
+           uob_arcprincipal."NAME" as P_PRINCIPALNAME,
            uob_customer.BNKCUSTOMERKY as C_BNKCUSTOMERKY,
            uob_customer.BNKORGKY as C_BNKORGKY,
            uob_customer.CORORGKYFI as C_CORORGKYFI,
