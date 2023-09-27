@@ -31,9 +31,9 @@ DNUserDetails as (
            uob_user.ISDELETED as U_ISDELETED
            
         from uob_user
-        Left join uob_customer  on uob_customer.BNKCUSTOMERKY = uob_user.BNKCUSTOMERKY
-        Left join uob_affiliate on uob_affiliate.CORORGKY =  uob_customer.CORORGKYFI
-        Left join uob_arcprincipal on uob_user.ARCPRINCIPALKY = ARCPRINCIPAL.ARCPRINCIPALKY
+        Left join uob_customer  on uob_customer.C_BNKCUSTOMERKY = uob_user.U_BNKCUSTOMERKY
+        Left join uob_affiliate on uob_affiliate.A_CORORGKY =  uob_customer.C_CORORGKYFI
+        Left join uob_arcprincipal on uob_user.U_ARCPRINCIPALKY = uob_arcprincipal.P_ARCPRINCIPALKY
                                   
 )
 
