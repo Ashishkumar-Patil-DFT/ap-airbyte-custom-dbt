@@ -22,7 +22,7 @@ with uob_audit as (
         uob_audittype.APPCOMPONENTENUM,
         uob_audittype.AUDITFUNCTIONENUM,
         uob_message.MSGCODE,
-        uob_message.TRANSLATION
+        uob_message."TRANSLATION"
 
         From uob_audit 
         Inner join uob_audittype on uob_audit.CORAUDITTYPEKY = uob_audittype.CORAUDITTYPEKY
