@@ -24,3 +24,6 @@ sources:
 models:
   - name: UserDetails
     description: "User Details"
+  
+  - name: AuditDetails
+    description: "Audit Details"
