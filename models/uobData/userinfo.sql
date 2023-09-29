@@ -21,6 +21,7 @@ DNUserDetails as (
            uob_customer.UPDATEDTTM as C_UPDATEDTTM,
            uob_customer.ISSKIPSYNCATLOGIN as C_ISSKIPSYNCATLOGIN,
            uob_user.BNKUSERKY as U_BNKUSERKY,
+           uob_user.ARCPRINCIPALKY as U_ARCPRINCIPALKY,
            uob_user.ENROLLDTTM as U_ENROLLDTTM,
            uob_user.UPDATEDTTM as U_UPDATEDTTM,
            uob_user.USERACCESSTYPECD as U_USERACCESSTYPECD,
